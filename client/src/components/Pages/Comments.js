@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 const Comment = (props) => {
   const { id: commentId } = useParams();
