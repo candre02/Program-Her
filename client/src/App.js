@@ -7,7 +7,7 @@ import Comments from './pages/Comments';
 import ProgramHer from './pages/ProgramHer';
 import Nav from './components/Nav';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import './App.css';
+
 
 // app function
 function App() {
