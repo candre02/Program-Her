@@ -50,10 +50,9 @@ function ContactForm() {
  
 return (
   <section>
-    <h2 id="h2tag">Contact</h2>
-    <p id='hire'>
-    Interested in hiring me for your project or just want to say hi? <br></br>
-    You can fill in the contact form below.
+    <h2 id="h2tag">Contact Me</h2>
+    <p id='reach-out'>
+    Interested in reaching out  <br></br> You can fill in the contact form below.
     </p>
     <form id="contact-form" onSubmit={handleSubmit}>
       <Row>
