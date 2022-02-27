@@ -9,10 +9,15 @@ import Nav from './components/Nav';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 // import 'chakraProvider' component
 import { ChakraProvider } from '@chakra-ui/react';
+import logo from './logo.svg';
+import './App.css';
+import Navbar from "./components/Navbar"; 
+import Footer from "./components/Footer";
 
 // app function
 function App({ Component }) {
   return (
+    <>
     <ChakraProvider>
       <Component />
     <Router>
@@ -26,6 +31,12 @@ function App({ Component }) {
       </Switch>
     </Router>
   </ChakraProvider>  
+    <div className="App">
+      <h1>Program Her </h1>
+      <Navbar />
+      <Footer />
+    </div>
+    </>
   );
 }
 
