@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-import About from '../Pages/About';
-import Comments from '../Pages/Comments';
 
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const AppNavbar = () => {
   // set modal display state
@@ -71,7 +69,7 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-=======
+
       <Navbar bg="dark" variant="dark">
     <Container>
       <Navbar.Brand href="#home">

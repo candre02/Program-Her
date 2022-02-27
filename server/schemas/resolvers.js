@@ -29,7 +29,7 @@ const resolvers = {
       const params = username ? { username } : {};
       return Comment.find(params).sort({ createdAt: -1 });
     },
-    Comment: async (parent, { _id }) => {
+    comment: async (parent, { _id }) => {
       return Comment.findOne({ _id });
     }
   },

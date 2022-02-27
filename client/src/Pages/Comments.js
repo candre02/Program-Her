@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
+import {useParams} from "react-router-dom";
+import {useQuery} from "@apollo/client";
+import { QUERY_COMMENT} from "../utils/queries";
 
 const Comment = (props) => {
   const { id: commentId } = useParams();
   console.log(commentId);
 
-  const { id: commentId } = useParams();
+
 
   const { loading, data } = useQuery(QUERY_COMMENT, {
     variables: { id: commentId },
