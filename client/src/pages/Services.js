@@ -16,7 +16,7 @@ function Services() {
         <h3>Job Searches</h3>
       </div>
       <div>
-        <h4>Reasources</h4>
+        <h4>Resources</h4>
       </div>
     </section>
   )
