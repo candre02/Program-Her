@@ -19,10 +19,8 @@ function App() {
   return (
     <>
     <ChakraProvider> 
-      
     <Router>
     <div className="App">
-      
       <Navbar />
       <Switch>
         <Route exact path="/" component={ProgramHer} />
@@ -31,9 +29,6 @@ function App() {
         <Route exact path="/comments" component={Comments} />
         <Route exact path="/contact" component={Contact} />
         </Switch>
-      
-    
-      
       <Footer />
     </div>
     </Router>

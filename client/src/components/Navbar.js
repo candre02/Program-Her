@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom'; <-not needed
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
@@ -79,7 +79,7 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
       
-      {/* lines 82-106 not needed - this before wed */}
+      {/* lines 82-106 not needed */}
       {/* <Navbar bg="dark" variant="dark">
     <Container>
       <Navbar.Brand href="#home">
