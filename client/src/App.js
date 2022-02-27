@@ -7,7 +7,7 @@ import Services from './pages/Services';
 import Comments from './pages/Comments';
 import ProgramHer from './pages/ProgramHer';
 // import react-router-dom
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 // import 'chakraProvider' component
 import { ChakraProvider } from '@chakra-ui/react';
 // import components
@@ -15,25 +15,29 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 // app function
-function App({Component}) {
+function App() {
   return (
     <>
     <ChakraProvider> 
-       <Component />
+      
     <Router>
+    <div className="App">
+      
       <Navbar />
+      <Switch>
         <Route exact path="/" component={ProgramHer} />
         <Route exact path="/about" component={About} />
         <Route exact path="/services" component={Services} />
         <Route exact path="/comments" component={Comments} />
         <Route exact path="/contact" component={Contact} />
-    </Router>
-    </ChakraProvider>   
-    <div className="App">
-      <h1>Program Her </h1>
-      <Navbar />
+        </Switch>
+      
+    
+      
       <Footer />
     </div>
+    </Router>
+    </ChakraProvider> 
     </>
   );
 }
