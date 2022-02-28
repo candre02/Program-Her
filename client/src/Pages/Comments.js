@@ -1,4 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_COMMENT } from "../../utils/queries";
+import ReactionList from "../components/reactionlist";
 
 const Comment = (props) => {
   const { id: commentId } = useParams();
@@ -29,6 +33,11 @@ const Comment = (props) => {
           <p>{comment.commentText}</p>
         </div>
       </div>
+
+      {comment.reactionCount > 0 && (
+        <ReactionList reactions={comment.reactions} />
+      )}
+      {Auth.loggedIn() && <ReactionForm commentId={comment._id} />}
     </div>
   );
 };
