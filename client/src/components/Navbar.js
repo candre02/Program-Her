@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom'; <-not needed
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-import About from '../Pages/About';
-import Comments from '../Pages/Comments';
 
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const AppNavbar = () => {
   // set modal display state
@@ -16,18 +14,27 @@ const AppNavbar = () => {
     <>
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Program-Her
+          <Navbar.Brand  href='/'>
+            ProgramHer
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/about'>
+              <Nav.Link  href='/about'>
                 About
+              </Nav.Link>
+              <Nav.Link  href='/services'>
+                Services
+              </Nav.Link>
+              <Nav.Link  href='/comments'>
+                Comments
+              </Nav.Link>
+              <Nav.Link  href='/contact'>
+                Contact
               </Nav.Link>
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/comments'>
+                  <Nav.Link  to='/comments'>
                    Comments
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
@@ -39,7 +46,7 @@ const AppNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* set modal data up */}
+      {/* set modal data up - hamburger menu (below)*/}
       <Modal
         size='lg'
         show={showModal}
@@ -71,8 +78,9 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-=======
-      <Navbar bg="dark" variant="dark">
+      
+      {/* lines 82-106 not needed */}
+      {/* <Navbar bg="dark" variant="dark">
     <Container>
       <Navbar.Brand href="#home">
         <img
@@ -88,14 +96,14 @@ const AppNavbar = () => {
   </Navbar>
   <Navbar bg="dark" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Navbar.Brand href="#home"></Navbar.Brand>
     <Nav className="me-auto">
       <Nav.Link href="#home">Home</Nav.Link>
       <Nav.Link href="#features">Services</Nav.Link>
       <Nav.Link href="#pricing">Comments</Nav.Link>
     </Nav>
     </Container>
-  </Navbar>
+  </Navbar> */}
     </>
   );
 };

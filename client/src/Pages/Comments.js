@@ -4,11 +4,9 @@ import { useQuery } from "@apollo/client";
 import { QUERY_COMMENT } from "../../utils/queries";
 import ReactionList from "../components/reactionlist";
 
-const Comment = (props) => {
+const Comments = (props) => {
   const { id: commentId } = useParams();
   console.log(commentId);
-
-  const { id: commentId } = useParams();
 
   const { loading, data } = useQuery(QUERY_COMMENT, {
     variables: { id: commentId },
@@ -42,4 +40,4 @@ const Comment = (props) => {
   );
 };
 
-export default Comment;
+export default Comments;
