@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_COMMENTS = gql`
   query comments($username: String) {
@@ -31,6 +31,7 @@ export const QUERY_COMMENT = gql`
         createdAt
         username
         reactionBody
+      }
     }
   }
 `;
@@ -81,4 +82,3 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
-

@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link } from 'react-router-dom'
+import React from 'react'
 
 const CommentList = ({ comments, title }) => {
   if (!comments.length) {
-    return <h3>No Comments Yet</h3>;
+    return <h3>No Comments Yet</h3>
   }
 
   return (
@@ -19,22 +19,22 @@ const CommentList = ({ comments, title }) => {
                 className="text-light"
               >
                 {comment.username}
-              </Link>{" "}
+              </Link>{' '}
               comment on {comment.createdAt}
             </p>
             <div className="card-body">
               <Link to={`/comment/${comment._id}`}>
                 <p>{comment.commentText}</p>
                 <p className="mb-0">
-                  Reactions: {comment.reactionCount} || Click to{" "}
-                  {comment.reactionCount ? "see" : "start"} the discussion!
+                  Reactions: {comment.reactionCount} || Click to{' '}
+                  {comment.reactionCount ? 'see' : 'start'} the discussion!
                 </p>
               </Link>
             </div>
           </div>
         ))}
     </div>
-  );
-};
+  )
+}
 
-export default CommentList;
+export default CommentList
