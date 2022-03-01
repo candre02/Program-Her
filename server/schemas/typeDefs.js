@@ -13,6 +13,15 @@ const typeDefs = gql`
     commentText: String
     createdAt: String
     username: String
+    reactionCount: Int
+    reactions: [Reaction]
+  }
+
+  type Reaction {
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    username: String
   }
 
   type Auth {
@@ -30,7 +39,9 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addComment(thoughtComment: String!): Comment
+    addUser(username: String!, email: String!, password: String!): Auth
+    addComment(commentText: String!): Comment
+    addReaction(commentId: ID!, reactionBody: String!): Comment
   }
 `;
 

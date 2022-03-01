@@ -38,6 +38,23 @@ db.once('open', async () => {
      createdComments.push(createdComment);
    }
 
+   // create reactions
+  for (let i = 0; i < 100; i += 1) {
+    const reactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+    const { username } = createdUsers.ops[randomUserIndex];
+
+    const randomCommentIndex = Math.floor(Math.random() * createdComments.length);
+    const { _id: commentId } = createdComments[randomCommentIndex];
+
+    await Comment.updateOne(
+      { _id: commentId },
+      { $push: { reactions: { reactionBody, username } } },
+      { runValidators: true }
+    );
+  }
+
    console.log('all done!');
    process.exit(0);
 });

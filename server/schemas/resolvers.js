@@ -18,7 +18,7 @@ const resolvers = {
     users: async () => {
       return User.find()
         .select('-__v -password')
-        .populate('thoughts');
+        .populate('comments');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
@@ -57,7 +57,7 @@ const resolvers = {
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { comments: thought._id } },
+          { $push: { comments: comment._id } },
           { new: true }
         );
 
@@ -66,7 +66,20 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+    addReaction: async (parent, { commentId, reactionBody }, context) => {
+      if (context.user) {
+        const updatedComment = await Comment.findOneAndUpdate(
+          { _id: commentId },
+          { $push: { reactions: { reactionBody, username: context.user.username } } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedComment;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
   }
+}
 };
 
 module.exports = resolvers;

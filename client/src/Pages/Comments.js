@@ -1,10 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_COMMENT } from "../../utils/queries";
-import ReactionList from "../components/reactionlist";
+import { QUERY_COMMENT } from "../utils/queries";
+import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
+import Auth from '../utils/auth';
 
-const Comments = (props) => {
+const SingleComment = (props) => {
   const { id: commentId } = useParams();
   console.log(commentId);
 
@@ -33,11 +35,11 @@ const Comments = (props) => {
       </div>
 
       {comment.reactionCount > 0 && (
-        <ReactionList reactions={comment.reactions} />
+        <CommentList reactions={comment.reactions} />
       )}
-      {Auth.loggedIn() && <ReactionForm commentId={comment._id} />}
+      {Auth.loggedIn() && <CommentForm commentId={comment._id} />}
     </div>
   );
 };
 
-export default Comments;
+export default SingleComment;

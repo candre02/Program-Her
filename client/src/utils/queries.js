@@ -7,6 +7,13 @@ export const QUERY_COMMENTS = gql`
       commentText
       createdAt
       username
+      reactionCount
+      reactions {
+        _id
+        createdAt
+        username
+        reactionBody
+      }
     }
   }
 `;
@@ -18,6 +25,12 @@ export const QUERY_COMMENT = gql`
       commentText
       createdAt
       username
+      reactionCount
+      reactions {
+        _id
+        createdAt
+        username
+        reactionBody
     }
   }
 `;
@@ -32,6 +45,7 @@ export const QUERY_USER = gql`
         _id
         commentText
         createdAt
+        reactionCount
       }
     }
   }
@@ -47,6 +61,12 @@ export const QUERY_ME = gql`
         _id
         commentText
         createdAt
+        reactionCount
+        reactions {
+          _id
+          createdAt
+          reactionBody
+          username
       }
     }
   }
