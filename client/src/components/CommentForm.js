@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_COMMENT } from "../utils/mutations";
-import { QUERY_COMMENTS, QUERY_ME } from '../utils/queries';
-
-
-
+import { QUERY_COMMENTS, QUERY_ME } from "../utils/queries";
 
 const CommentForm = () => {
   const [commentText, setText] = useState("");
-const [characterCount, setCharacterCount] = useState(0);
+  const [characterCount, setCharacterCount] = useState(0);
   const [addComment, { error }] = useMutation(ADD_COMMENT, {
     update(cache, { data: { addComment } }) {
       try {
         const { comments } = cache.readQuery({ query: QUERY_COMMENTS });
         cache.writeQuery({
           query: QUERY_COMMENTS,
-          data: { comments: [addComment, ...comments] }
+          data: { comments: [addComment, ...comments] },
         });
       } catch (e) {
         console.error(e);
@@ -23,9 +20,9 @@ const [characterCount, setCharacterCount] = useState(0);
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, comments: [...me.comments, addComment] } }
+        data: { me: { ...me, comments: [...me.comments, addComment] } },
       });
-    }
+    },
   });
 
   const handleChange = (event) => {
@@ -50,6 +47,7 @@ const [characterCount, setCharacterCount] = useState(0);
     }
   };
 
+  // not needed lines 50-60
   // const [addComment, { error }] = useMutation(ADD_COMMENT, {
   //   update(cache, { data: { addComment } }) {
   //     const { comments } = cache.readQuery({ query: QUERY_COMMENTS });

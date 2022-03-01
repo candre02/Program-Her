@@ -1,10 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+
 import { useQuery } from "@apollo/client";
 import { QUERY_COMMENT } from "../utils/queries";
+
+import Auth from '../utils/auth';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
-import Auth from '../utils/auth';
 
 const SingleComment = (props) => {
   const { id: commentId } = useParams();
