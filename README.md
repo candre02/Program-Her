@@ -22,11 +22,11 @@ Clone the repo to your local machine and install the dependencies such as Node, 
 To use the app, go to the live link listed above.  Click "Login/Sign Up" to either log in or create an account. When you are logged in, you can choose to contact, comment or search different services.
 
 # Developer
-Crystal Andre: [candre02](https://www.github.com/candre02)
-Katrina Rodriguez: [krod2016](https://www.github.com/krod2016)
-Yongfeng Liu: [liuyfab](https://www.github.com/liuyfab)
-Blane Bussey: [blanebussey](https://www.github.com/blanebussey)
-Pabi Tamang: [Pabi149](https://www.github.com/Pabi149)
+* Crystal Andre: [candre02](https://www.github.com/candre02)
+* Katrina Rodriguez: [krod2016](https://www.github.com/krod2016)
+* Yongfeng Liu: [liuyfab](https://www.github.com/liuyfab)
+* Blane Bussey: [blanebussey](https://www.github.com/blanebussey)
+* Pabi Tamang: [Pabi149](https://www.github.com/Pabi149)
 
 ## License
   # MIT
