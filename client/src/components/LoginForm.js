@@ -1,7 +1,11 @@
+// import files
 import React, { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
 
+// import API - loginUser
 // import { loginUser } from '../utils/API';
+
+// import AuthService from utils dir and auth file
 // import Auth from '../utils/auth';
 
 const LoginForm = () => {
@@ -14,6 +18,7 @@ const LoginForm = () => {
     setUserFormData({ ...userFormData, [name]: value })
   }
 
+  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault()
 
@@ -24,18 +29,18 @@ const LoginForm = () => {
       event.stopPropagation()
     }
 
-    try {
-      //const response = await loginUser(userFormData);
+    // try {
+      // const response = await loginUser(userFormData);
       // if (!response.ok) {
       //   throw new Error('something went wrong!');
       // }
-      // const { token, user } = await response.json();
-      // console.log(user);
-      //Auth.login(token);
-    } catch (err) {
-      console.error(err)
-      setShowAlert(true)
-    }
+    //   const { token, user } = await response.json();
+    //   console.log(user);
+    //   Auth.login(token);
+    // } catch (err) {
+    //   console.error(err)
+    //   setShowAlert(true)
+    // }
 
     setUserFormData({
       username: '',
@@ -93,7 +98,7 @@ const LoginForm = () => {
         </Button>
       </Form>
     </>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

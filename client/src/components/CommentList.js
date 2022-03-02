@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom'
-import React from 'react'
+// import files
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const CommentList = ({ comments, title }) => {
   if (!comments.length) {
-    return <h3>No Comments Yet</h3>
+    return <h3>No Comments Yet</h3>;
   }
 
   return (
@@ -13,6 +15,7 @@ const CommentList = ({ comments, title }) => {
         comments.map((comment) => (
           <div key={comment._id} className="card mb-3">
             <p className="card-header">
+              {/* extra path to the end of link component */}
               <Link
                 to={`/profile/${comment.username}`}
                 style={{ fontWeight: 700 }}
@@ -23,6 +26,7 @@ const CommentList = ({ comments, title }) => {
               comment on {comment.createdAt}
             </p>
             <div className="card-body">
+              {/* extra path to the end of link component */}
               <Link to={`/comment/${comment._id}`}>
                 <p>{comment.commentText}</p>
                 <p className="mb-0">
@@ -34,7 +38,7 @@ const CommentList = ({ comments, title }) => {
           </div>
         ))}
     </div>
-  )
-}
+  );
+};
 
-export default CommentList
+export default CommentList;

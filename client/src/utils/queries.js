@@ -52,26 +52,28 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_ME = gql`
-  {
-    me {
-      _id
-      username
-      email
-      comments {
-        _id
-        commentText
-        createdAt
-        reactionCount
-        reactions {
-          _id
-          createdAt
-          reactionBody
-          username
-      }
-    }
-  }
-`;
+// (query_me is causing an graphql error: GraphQLError: Syntax Error: Expected Name, found <EOF>)
+// (solved the bug from devtools on source tab)
+// export const QUERY_ME = gql`
+//   {
+//     me {
+//       _id
+//       username
+//       email
+//       comments {
+//         _id
+//         commentText
+//         createdAt
+//         reactionCount
+//         reactions {
+//           _id
+//           createdAt
+//           reactionBody
+//           username
+//       }
+//     }
+//   }
+// `;
 
 export const QUERY_ME_BASIC = gql`
   {
