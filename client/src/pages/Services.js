@@ -39,21 +39,21 @@ export default function Services() {
       icon={<Icon as={FcAssistant} w={10} h={10} />}
       title={'Lifetime Support'}
       text={
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+        'When you sign up for ProgramHer, you become a part of our family. We will always be here to support our members through coding questions, and through daily life. '
       }
     />
     <Feature
       icon={<Icon as={FcDonate} w={10} h={10} />}
       title={'Unlimited Donations'}
       text={
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+        'This service allows us as a community to donate to where there is a need. If there is a charity or cause that our member(s) are aware of, we will glady donate what we can.'
       }
     />
     <Feature
       icon={<Icon as={FcInTransit} w={10} h={10} />}
       title={'NetWorking'}
       text={
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
+        'ProgramHer understands that meeting new people is not easy. We are going to start holding small gatherings for our members to meet in person, and gain a network of support.'
       }
     />
   </SimpleGrid>
