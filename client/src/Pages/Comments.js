@@ -1,14 +1,16 @@
+
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-import { useQuery } from '@apollo/client'
+import { useQuery, useMutation } from '@apollo/client'
 import { QUERY_COMMENT } from '../utils/queries'
-
+import {ADD_COMMENT} from '../utils/mutations'
 import Auth from '../utils/auth'
 import CommentList from '../components/CommentList'
 import CommentForm from '../components/CommentForm'
 
 const SingleComment = (props) => {
+  const [addComment, {error}] = useMutation(ADD_COMMENT)
   const { id: commentId } = useParams()
   console.log(commentId)
 
@@ -17,7 +19,8 @@ const SingleComment = (props) => {
   })
 
   const comment = data?.comment || {}
-
+console.log(data
+  )
   if (loading) {
     return <div>Loading...</div>
   }
@@ -37,7 +40,7 @@ const SingleComment = (props) => {
       </div>
 
       {comment.reactionCount > 0 && (
-        <CommentList reactions={comment.reactions} />
+        <CommentList />
       )}
       {Auth.loggedIn() && <CommentForm commentId={comment._id} />}
     </div>

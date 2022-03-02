@@ -20,12 +20,12 @@ const AppNavbar = () => {
             <Nav className="ml-auto">
               <Nav.Link href="/about">About</Nav.Link>
               <Nav.Link href="/services">Services</Nav.Link>
-              <Nav.Link href="/comments">Comments</Nav.Link>
+              <Nav.Link href="/singlecomment">Comments</Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link to="/comments">Comments</Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={()=>Auth.logout()}>Logout</Nav.Link>
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)}>

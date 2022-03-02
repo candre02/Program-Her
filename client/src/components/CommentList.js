@@ -29,10 +29,10 @@ const CommentList = ({ comments, title }) => {
               {/* extra path to the end of link component */}
               <Link to={`/comment/${comment._id}`}>
                 <p>{comment.commentText}</p>
-                <p className="mb-0">
+                {/* <p className="mb-0">
                   Reactions: {comment.reactionCount} || Click to{' '}
                   {comment.reactionCount ? 'see' : 'start'} the discussion!
-                </p>
+                </p> */}
               </Link>
             </div>
           </div>

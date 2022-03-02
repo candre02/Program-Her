@@ -291,3 +291,36 @@ a {
 .navActive {
   color: var(--secondary);
 }
+
+
+#ser1 {
+  background-color: rgb(233, 241, 247);
+  border-radius: 10px;
+  outline-color: #d4d0f0;
+  outline-style:double; 
+  padding: 94px;
+  margin: 50px;
+}
+
+#ab1 {
+  background-color: rgb(221, 177, 201);
+  padding: 206px;
+}
+
+#ab2 {
+  padding: 30px;
+  font-size: 60px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 250px;
+}
+
+#ab3 {
+  font-size: 25px;
+}
+
+#ph1 {
+  padding: 30px;
+  margin: 115px;
+  background-color: rgb(212, 234, 241);
+  border-radius: 10px;
+}

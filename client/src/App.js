@@ -4,7 +4,7 @@ import * as React from 'react'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
-import Comments from './pages/Comments'
+import SingleComment from './pages/Comments'
 import ProgramHer from './pages/ProgramHer'
 // import react-router-dom
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
@@ -14,10 +14,43 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+
+// import statement @apollo/client
+import { setContext } from '@apollo/client/link/context';
+
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+// setContext: create a middleware function that will retrieve the token, combine it with httpLink
+// authLink: setContext() to retrieve the token from localStorage, set the HTTP req headers of evry req to include the token
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      // ... spread operator
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  // combine authlink and httplink
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
 // app function
 function App() {
   return (
-    <>
+    <ApolloProvider client={client}>
       <ChakraProvider>
         <Router>
           <div className="App">
@@ -26,14 +59,14 @@ function App() {
               <Route exact path="/" component={ProgramHer} />
               <Route exact path="/about" component={About} />
               <Route exact path="/services" component={Services} />
-              <Route exact path="/comments" component={Comments} />
+              <Route exact path="/comment" component={SingleComment} />
               <Route exact path="/contact" component={Contact} />
             </Switch>
             <Footer />
           </div>
         </Router>
       </ChakraProvider>
-    </>
+    </ApolloProvider>
   )
 }
 
