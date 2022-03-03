@@ -56,7 +56,7 @@ export default function Footer() {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Text>© 2020 ProgramHer. All rights reserved</Text>
+        <Text>© 2022 ProgramHer by Blane Bussey, Crystal Andre, Katrina Rodriguez, Pabi Tamang, Yongfeng</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'#'}>
             <FaTwitter />
