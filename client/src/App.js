@@ -1,12 +1,12 @@
 // import files
 import * as React from 'react'
 // import pages
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Services from './pages/Services'
-import SingleComment from './pages/Comments'
-import ProgramHer from './pages/ProgramHer'
-import Profile from './pages/Profile'
+import About from './not pages/About'
+import Contact from './not pages/Contact'
+import Services from './not pages/Services'
+import SingleComment from './not pages/Comments'
+import ProgramHer from './not pages/ProgramHer'
+import Profile from './not pages/Profile'
 // import react-router-dom
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 // import 'chakraProvider' component
