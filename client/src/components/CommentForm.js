@@ -3,11 +3,30 @@ import { useMutation } from '@apollo/client'
 import { ADD_COMMENT } from '../utils/mutations'
 import { QUERY_COMMENTS } from '../utils/queries' // <- removed query_me
 
-const CommentForm = () => {
-  const [commentText, setText] = useState('')
+const CommentForm = (commentId) => {
+  const [commentBody, setBody] = useState('')
   const [characterCount, setCharacterCount] = useState(0)
 
   const [addComment, { error }] = useMutation(ADD_COMMENT);
+  const handleChange = (event) => {
+    if (event.target.value.length <= 280) {
+      setBody(event.target.value);
+      setCharacterCount(event.target.value.length);
+    }
+  };
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await addComment({
+        variables: { commentBody, commentId },
+      });
+      setBody("");
+      setCharacterCount(0);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   // T, {
   //   update(cache, { data: { addComment } }) {
   //     try {
@@ -31,29 +50,29 @@ const CommentForm = () => {
   //   },
   // }
   // update state based on form input changes
-  const handleChange = (event) => {
-    if (event.target.value.length <= 280) {
-      setText(event.target.value)
-      setCharacterCount(event.target.value.length)
-    }
-  }
+  // const handleChange = (event) => {
+  //   if (event.target.value.length <= 280) {
+  //     setText(event.target.value)
+  //     setCharacterCount(event.target.value.length)
+  //   }
+  // }
 
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault()
+  // // submit form
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault()
 
-    try {
-      await addComment({
-        variables: { commentText },
-      })
+  //   try {
+  //     await addComment({
+  //       variables: { commentText },
+  //     })
 
-      // clear form value
-      setText('')
-      setCharacterCount(0)
-    } catch (e) {
-      console.error(e)
-    }
-  };
+  //     // clear form value
+  //     setText('')
+  //     setCharacterCount(0)
+  //   } catch (e) {
+  //     console.error(e)
+  //   }
+  // };
 
   // not needed lines 50-60
   // const [addComment, { error }] = useMutation(ADD_COMMENT, {
@@ -84,7 +103,7 @@ const CommentForm = () => {
         {/* added the thoughtText value, hanldeChange function to the textarea element */}
         <textarea
           placeholder="Add your comments here"
-          value={commentText}
+          value={commentBody}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>

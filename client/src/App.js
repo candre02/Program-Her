@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import Services from './pages/Services'
 import SingleComment from './pages/Comments'
 import ProgramHer from './pages/ProgramHer'
+import Profile from './pages/Profile'
 // import react-router-dom
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 // import 'chakraProvider' component
@@ -13,6 +14,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 // import components
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+
 
 import {
   ApolloClient,
@@ -23,6 +25,10 @@ import {
 
 // import statement @apollo/client
 import { setContext } from '@apollo/client/link/context';
+
+import CommentList from './components/CommentList'
+
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -59,7 +65,9 @@ function App() {
               <Route exact path="/" component={ProgramHer} />
               <Route exact path="/about" component={About} />
               <Route exact path="/services" component={Services} />
-              <Route exact path="/comment" component={SingleComment} />
+              <Route exact path="/singlecomment" component={SingleComment} />
+              <Route exact path="/comment/:id" component={CommentList} />
+              <Route exact path="/profile" component={Profile} />
               <Route exact path="/contact" component={Contact} />
             </Switch>
             <Footer />
