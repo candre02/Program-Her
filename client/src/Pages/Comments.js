@@ -49,51 +49,28 @@ const handleFormSubmit = async (event) => {
   }
 };
 
-
-
-
-
-
-
-
-
-//   const [addComment, {error}] = useMutation(ADD_COMMENT)
-//   const { id: commentId } = useParams()
-//   console.log(commentId)
-
-//   const { loading, data } = useQuery(QUERY_COMMENT, {
-//     variables: { id: commentId },
-//   })
-
-//   const comment = data?.comment || {}
-// console.log(data
-//   )
-//   if (loading) {
-//     return <div>Loading...</div>
-//   }
-
   return (
     <>
       <Flex
         p="4"
         flexDirection="row"
-        width="100wh"
-        height="89vh"
-        alignItems="center"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        backgroundSize="cover"
+        // width="100wh"
+        // height="89vh"
+       justifyContent="center"
         id="singleComment"
         overflowY="auto"
+       
       >
-        <Box boxSize="sm" rounded="md" ml="150px">
+        <Box boxSize="lg" w="105vh" h="130vh" mt={50} rounded="md" >
           <form onSubmit={handleFormSubmit}>
             <Stack
               rounded="md"
-              spacing={4}
+              spacing={8}
+              width="58vh"
               p="2rem 2rem"
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
+              outline="solid 1px"
             >
               <Text fontWeight="semibold">
                 Comment Here
@@ -124,7 +101,7 @@ const handleFormSubmit = async (event) => {
                 borderRadius={0}
                 type="submit"
                 variant="solid"
-                colorScheme="teal"
+                colorScheme="purple"
                 width="full"
                 rounded="md"
               >
@@ -135,7 +112,7 @@ const handleFormSubmit = async (event) => {
             <CommentList comments={commentText._id}/>
             )}
           </form>
-          <div>
+          {/* <div>
             <div className="flex-row justify-space-between">
               <div className="col-12 mb-3">
               {loading ? (
@@ -145,39 +122,16 @@ const handleFormSubmit = async (event) => {
               
                   <Box mt={300}>
                     
-                    <CommentList  />
+                    <CommentList  /> */}
                     {/* <CommentForm commentId={comments._id} /> */}
-                  </Box>
+                  {/* </Box>
               )}
               </div>
             </div>
-          </div>
+          </div> */}
         </Box>
       </Flex>
     </>
-
-
-
-
-
-    // <div>
-    //   <div className="card mb-3">
-    //     <p className="card-header">
-    //       <span style={{ fontWeight: 700 }} className="text-light">
-    //         {comment.username}
-    //       </span>{' '}
-    //       comment on {comment.createdAt}
-    //     </p>
-    //     <div className="card-body">
-    //       <p>{comment.commentText}</p>
-    //     </div>
-    //   </div>
-
-    //   {comment.reactionCount > 0 && (
-    //     <CommentList reactions={comment.reactions} />
-    //   )}
-    //     {Auth.loggedIn() && <CommentForm commentId={comment._id} />}
-    // </div>
   )
 }
 

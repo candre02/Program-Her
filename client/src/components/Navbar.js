@@ -23,7 +23,7 @@ const AppNavbar = () => {
               <Nav.Link href="/contact">Contact</Nav.Link>
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link to="/singlecomment">Comments</Nav.Link>
+                  <Nav.Link href="/singlecomment">Comments</Nav.Link>
                   <Nav.Link onClick={()=>Auth.logout()}>Logout</Nav.Link>
                 </>
               ) : (

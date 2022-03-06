@@ -11,15 +11,7 @@ import {
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 
-const SocialButton = ({
-  children,
-  label,
-  href,
-}: {
-  children: ReactNode;
-  label: string;
-  href: string;
-}) => {
+function SocialButton(props) {
   return (
     <chakra.button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -28,7 +20,7 @@ const SocialButton = ({
       h={8}
       cursor={'pointer'}
       as={'a'}
-      href={href}
+      href={props.href}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
@@ -36,8 +28,8 @@ const SocialButton = ({
       _hover={{
         bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
       }}>
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
+      <VisuallyHidden>{props.label}</VisuallyHidden>
+      {props.children}
     </chakra.button>
   );
 };

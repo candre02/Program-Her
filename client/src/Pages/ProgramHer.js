@@ -3,108 +3,92 @@ import React from 'react';
 // import backgroundimage
 import backgroundImage from '../assets/images/Her.jpg';
 // import chakra-ui
-import { Container } from '@chakra-ui/react';
-// import {
-//   Box,
-//   chakra,
-//   // Flex,
-//   SimpleGrid,
-//   // Stat,
-//   // StatLabel,
-//   // StatNumber,
-//   // useColorModeValue,
-// } from '@chakra-ui/react';
-// // import { ReactNode } from 'react';
-// import { BsPerson } from 'react-icons/bs';
-// import { FiServer } from 'react-icons/fi';
-// import { GoLocation } from 'react-icons/go';
+import {
+  chakra,
+  Box,
+  useColorModeValue,
+  Flex,
+  SimpleGrid,
+  Icon,
+  Image,
+} from "@chakra-ui/react";
 
-// interface StatsCardProps {
-//   title: string;
-//   stat: string;
-//   icon: ReactNode;
-// }
+import { FiExternalLink } from "react-icons/fi";
 
-// function StatsCard(props: StatsCardProps) {
-//   const { title, stat, icon } = props;
-//   return (
-//     <Stat
-//       px={{ base: 2, md: 4 }}
-//       py={'5'}
-//       shadow={'xl'}
-//       border={'1px solid'}
-//       borderColor={useColorModeValue('gray.800', 'gray.500')}
-//       rounded={'lg'}>
-//       <Flex justifyContent={'space-between'}>
-//         <Box pl={{ base: 2, md: 4 }}>
-//           <StatLabel fontWeight={'medium'} isTruncated>
-//             {title}
-//           </StatLabel>
-//           <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
-//             {stat}
-//           </StatNumber>
-//         </Box>
-//         <Box
-//           my={'auto'}
-//           color={useColorModeValue('gray.800', 'gray.200')}
-//           alignContent={'center'}>
-//           {icon}
-//         </Box>
-//       </Flex>
-//     </Stat>
-//   );
-// }
-
-
-// this is the homepage of programher
-export default function ProgramHer() {
+export default function ProgramHer(){
   return (
-    <Container id='ph1' className="background-image">
-      <div
-        className="bg-image p-5 text-center shadow-1-strong rounded my-2 text-white img-fluid"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          height: '300px',
-          width: '1500px',
-          outline: '1px solid grey',
-          padding: '48px',
-          margin: '8px',
-          backgroundRepeat: 'no-repeat',
-          backgroundPostion: 'center',
-          backgroundSize: '108%'
-        }}
-      ></div>
-    </Container>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={0}>
+      <Flex bg="brand.400">
+        <Image
+          src={backgroundImage}
+          alt="coder women"
+          fit="cover"
+          w="full"
+          h={{ base: 64, md: "full" }}
+          bg="gray.100"
+          loading="lazy"
+          opacity={0.4}
+        />
+      </Flex>
+      <Flex
+        direction="column"
+        alignItems="start"
+        justifyContent="center"
+        px={{ base: 4, md: 8, lg: 20 }}
+        py={24}
+        zIndex={3}
+      >
+        <chakra.span
+          color={useColorModeValue("brand.600", "gray.300")}
+          fontSize="lg"
+          textTransform="uppercase"
+          fontWeight="extrabold"
+        >
+          Award winning support
+        </chakra.span>
+        <chakra.h1
+          mb={4}
+          fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
+          fontWeight="bold"
+          color={useColorModeValue("brand.600", "gray.300")}
+          lineHeight="shorter"
+          textShadow="2px 0 currentcolor"
+        >
+          We&apos;re here to help
+        </chakra.h1>
+        <chakra.p
+          pr={{ base: 0, lg: 16 }}
+          mb={4}
+          fontSize="lg"
+          color={useColorModeValue("brand.600", "gray.400")}
+          letterSpacing="wider"
+        >
+          Get the #1 NetWorking Platform and start delivering personalized
+          experiences at every stage of the customer journey.
+        </chakra.p>
+        <Box display="inline-flex" rounded="md" shadow="md">
+          <chakra.a
+            mt={2}
+            display="inline-flex"
+            alignItems="center"
+            justifyContent="center"
+            px={5}
+            py={3}
+            border="solid transparent"
+            fontWeight="bold"
+            w="full"
+            rounded="md"
+            color={useColorModeValue("white")}
+            bg={useColorModeValue("brand.600", "brand.500")}
+            _hover={{
+              bg: useColorModeValue("brand.700", "brand.600"),
+            }}
+          >
+            Visit the Help Centre
+            <Icon as={FiExternalLink} ml={2} />
+          </chakra.a>
+        </Box>
+      </Flex>
+    </SimpleGrid>
   );
-}
-  
-
-// <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
-//       <chakra.h1
-//         textAlign={'center'}
-//         fontSize={'4xl'}
-//         py={10}
-//         fontWeight={'bold'}>
-//         Our company is expanding, you could be too.
-//       </chakra.h1>
-//       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-//         <StatsCard
-//           title={'Users'}
-//           stat={'5,000'}
-//           icon={<BsPerson size={'3em'} />}
-//         />
-//         <StatsCard
-//           title={'Servers'}
-//           stat={'1,000'}
-//           icon={<FiServer size={'3em'} />}
-//         />
-//         <StatsCard
-//           title={'Datacenters'}
-//           stat={'7'}
-//           icon={<GoLocation size={'3em'} />}
-//         />
-//       </SimpleGrid>
-//     </Box>
- 
-
-
+};

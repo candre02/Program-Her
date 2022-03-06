@@ -294,7 +294,7 @@ a {
 
 
 #ser1 {
-  background-color: rgb(233, 241, 247);
+  background-color: rgb(253, 253, 253);
   border-radius: 10px;
   outline-color: #d4d0f0;
   outline-style:double; 
@@ -303,8 +303,7 @@ a {
 }
 
 #ab1 {
-  background-color: rgb(221, 177, 201);
-  padding: 206px;
+  background-color: rgb(240, 218, 230);
 }
 
 #ab2 {

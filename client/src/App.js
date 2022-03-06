@@ -66,7 +66,7 @@ function App() {
               <Route exact path="/about" component={About} />
               <Route exact path="/services" component={Services} />
               <Route exact path="/singlecomment" component={SingleComment} />
-              <Route exact path="/comment/:id" component={CommentList} />
+              {/* <Route exact path="/comment/:id" component={CommentList} /> */}
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/contact" component={Contact} />
             </Switch>
