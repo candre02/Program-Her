@@ -68,32 +68,6 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-
-      {/* lines 82-106 not needed */}
-      {/* <Navbar bg="dark" variant="dark">
-    <Container>
-      <Navbar.Brand href="#home">
-        <img
-          alt=""
-          src="/logo.svg"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-        />{' '}
-     Program Her
-      </Navbar.Brand>
-    </Container>
-  </Navbar>
-  <Navbar bg="dark" variant="dark">
-    <Container>
-    <Navbar.Brand href="#home"></Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Services</Nav.Link>
-      <Nav.Link href="#pricing">Comments</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar> */}
     </>
   )
 }

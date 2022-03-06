@@ -26,10 +26,6 @@ import {
 // import statement @apollo/client
 import { setContext } from '@apollo/client/link/context';
 
-import CommentList from './components/CommentList'
-
-
-
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
