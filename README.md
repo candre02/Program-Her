@@ -20,7 +20,7 @@ Clone the repo to your local machine and install the dependencies such as Node, 
 To use the app, go to the live link listed above.  Click "Login/Sign Up" to either log in or create an account. When you are logged in, you can choose to contact, comment or search different services.
 
 ### Images
-
+![mernpic](https://user-images.githubusercontent.com/81876258/171498396-d66ff02f-7f65-46a0-99e4-8088f5039ecf.png)
 
 # Developer
 * Crystal Andre: [candre02](https://www.github.com/candre02)
