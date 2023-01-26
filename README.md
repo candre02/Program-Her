@@ -8,7 +8,7 @@
 * [License](#license)
 
 ### Heroku Deployment link
-//[Click Here!](https://programher2.herokuapp.com/)
+[Click Here!](https://programher2.herokuapp.com/)
 
 # Description
 Program-Her was a MERN stack single-page application. It was designed for women across Texas to learn how to code. Along with coding, Program-Her offers networking, and support for women in all walks of life. On our services page, links for networking, job-searching & resources can be found. Program-Her was designed for women supporting women. 
