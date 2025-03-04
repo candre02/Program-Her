@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/candre02/Program-Her.git"
+        "url": "https://github.com/candre02/Program-Her.git"
     },
     "keywords": [],
     "author": "",
@@ -32,12 +32,8 @@
     "bugs": {
         "url": "https://github.com/candre02/Program-Her/issues"
     },
-<<<<<<< HEAD
     "homepage": "https://github.com/candre02/Program-Her#readme",
     "devDependencies": {
         "gh-pages": "^5.0.0"
     }
-=======
-    "homepage": "https://candre02.github.io/Program-Her/"
->>>>>>> 10053898594b243ac21c84a04681437639ae2efd
 }
